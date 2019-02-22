@@ -18,5 +18,9 @@ php artisan migrate --seed
 10. 学习了 JWT 的概念及 jwt-auth 的使用
 11. 完成了第三方登录(微信登录)、用户登录等接口
 12. jwt token 的获取，刷新，删除  
-12. 增加了 artisan 命令，快速生成 token  
+13. 增加了 artisan 命令，快速生成 token  
+14. 使用 Fractal 转换模型数据
+15. 获取用户信息接口  
+16. 编辑用户信息接口  
+17. 使用接口上传图片  
 
