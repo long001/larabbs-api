@@ -17,7 +17,8 @@ $api = app('Dingo\Api\Routing\Router');
 
 $api->version('v1', [
     'namespace' => 'App\Http\Controllers\Api',
-    'middleware' => 'serializer:array',
+//    'middleware' => 'serializer:array',
+    'middleware' => ['serializer:array', 'bindings'],
 ], function($api) {
     $api->group([
         'middleware' => 'api.throttle',
@@ -78,6 +79,13 @@ $api->version('v1', [
             // 发布话题
             $api->post('topics', 'TopicsController@store')
                 ->name('api.topics.store');
+
+            // 修改话题
+            // postMan jwt_user8，jwt_user14 变量的值 存在 currentValue 导致 Could not get any response
+            // jwt_user14 变量值总是写不对
+            // 在 Header 中写入 Authorization 字段，值 Bearer ................ OK
+            $api->patch('topics/{topic}', 'TopicsController@update')
+                ->name('api.topics.update');
         });
     });
 });
