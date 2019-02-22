@@ -7,8 +7,9 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Auth;
 use Spatie\Permission\Traits\HasRoles;
 use App\Models\Traits\ActiveUserHelper;
+use Tymon\JWTAuth\Contracts\JWTSubject;
 
-class User extends Authenticatable
+class User extends Authenticatable implements JWTSubject
 {
     use Notifiable {
         notify as protected laravelNotify;
@@ -25,6 +26,16 @@ class User extends Authenticatable
         }
         $this->increment('notification_count');
         $this->laravelNotify($instance);
+    }
+
+    public function getJWTIdentifier()
+    {
+        return $this->getKey();
+    }
+
+    public function getJWTCustomClaims()
+    {
+        return [];
     }
 
     /**
