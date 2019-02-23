@@ -68,6 +68,10 @@ $api->version('v1', [
         $api->get('users/{user}/topics', 'TopicsController@userIndex')
             ->name('api.users.topics.index');
 
+        // 话题详情
+        $api->get('topics/{topic}', 'TopicsController@show')
+            ->name('api.topics.show');
+
         /**************************************************************************************/
 
         // 需要 token 验证的接口
