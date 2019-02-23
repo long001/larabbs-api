@@ -83,9 +83,14 @@ $api->version('v1', [
             // 修改话题
             // postMan jwt_user8，jwt_user14 变量的值 存在 currentValue 导致 Could not get any response
             // jwt_user14 变量值总是写不对
+            // 可能是 jwt_user14 初始值 现在值 设置的关系
             // 在 Header 中写入 Authorization 字段，值 Bearer ................ OK
             $api->patch('topics/{topic}', 'TopicsController@update')
                 ->name('api.topics.update');
+
+            // 删除话题
+            $api->delete('topics/{topic}', 'TopicsController@destroy')
+                ->name('api.topics.destroy');
         });
     });
 });
