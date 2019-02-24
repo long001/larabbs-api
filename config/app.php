@@ -179,6 +179,8 @@ return [
 
         App\Providers\EasySmsServiceProvider::class,
 
+        App\Providers\JpushServiceProvider::class,
+
     ],
 
     /*
