@@ -54,5 +54,9 @@ php artisan migrate --seed
 44. 注册路由
 45. 获取访问令牌
 46. 刷新访问令牌
+47. Oauth2 密码模式的概念
+48. Passport 的安装及使用
+49. 将 JWT 替换为 Passport
+50. 为第三方登录接口直接创建完整的令牌信息
 
 
