@@ -23,7 +23,8 @@ class VerificationCodesController extends Controller
             return $this->response->errorUnauthorized('验证码错误');
         }
 
-        $phone = $request->phone;
+        // $phone = $request->phone;
+        $phone = $captchaData['phone'];
 
         if (!app()->environment('production')) {
             $code = '1234';
