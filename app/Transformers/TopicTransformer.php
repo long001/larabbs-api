@@ -8,7 +8,7 @@ use League\Fractal\TransformerAbstract;
 class TopicTransformer extends TransformerAbstract
 {
     // 话题以外的资源数据
-    protected $availableIncludes = ['user', 'category'];
+    protected $availableIncludes = ['user', 'category', 'topReplies'];
 
     public function transform(Topic $topic)
     {
@@ -36,5 +36,10 @@ class TopicTransformer extends TransformerAbstract
     public function includeCategory(Topic $topic)
     {
         return $this->item($topic->category, new CategoryTransformer());
+    }
+	
+	public function includeTopReplies(Topic $topic)
+    {
+        return $this->collection($topic->topReplies, new ReplyTransformer());
     }
 }
