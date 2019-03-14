@@ -17,6 +17,7 @@ class User extends Authenticatable implements JWTSubject
     use HasRoles;
     use ActiveUserHelper;
     use Traits\LastActivedAtHelper;
+	use Traits\HashIdHelper;
 
     public function notify($instance)
     {
