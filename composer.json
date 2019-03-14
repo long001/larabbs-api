@@ -9,6 +9,7 @@
         "dingo/api": "^2.0.0-alpha2",
         "doctrine/dbal": "^2.9",
         "fideloper/proxy": "~3.3",
+        "geoip2/geoip2": "^2.9",
         "gregwar/captcha": "^1.1",
         "guzzlehttp/guzzle": "~6.3",
         "hieu-le/active": "~3.5",
@@ -28,6 +29,7 @@
         "socialiteproviders/weixin": "^4.0",
         "spatie/laravel-permission": "~2.7",
         "summerblue/administrator": "~1.1",
+        "torann/geoip": "^1.0",
         "tymon/jwt-auth": "1.0.0-rc.2"
     },
     "require-dev": {

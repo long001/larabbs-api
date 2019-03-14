@@ -180,6 +180,8 @@ return [
         App\Providers\EasySmsServiceProvider::class,
 
         App\Providers\JpushServiceProvider::class,
+		
+		App\Providers\ComposerServiceProvider::class,
 
     ],
 
